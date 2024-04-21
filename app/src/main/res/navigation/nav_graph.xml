@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.atilsamancioglu.fotografpaylasmauygulamasi.SignupFragment"
+        android:name="com.atilsamancioglu.fotografpaylasmauygulamasi.view.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -16,16 +16,23 @@
     </fragment>
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.atilsamancioglu.fotografpaylasmauygulamasi.FeedFragment"
+        android:name="com.atilsamancioglu.fotografpaylasmauygulamasi.view.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
             android:id="@+id/action_feedFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.atilsamancioglu.fotografpaylasmauygulamasi.AddFragment"
+        android:name="com.atilsamancioglu.fotografpaylasmauygulamasi.view.AddFragment"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
 </navigation>
